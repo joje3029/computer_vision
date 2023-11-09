@@ -5,7 +5,7 @@ import mediapipe as mp
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0) #카메라 갯수가 2개이면 0,1이 됨. => 어느카메라 할래?
 
 #module = Module()
 
@@ -29,8 +29,6 @@ with mp_hands.Hands(
                 thumb = hand_landmarks.landmark[4]
                 index = hand_landmarks.landmark[12]
                 
-                print(thumb)
-                # print("index"+index)
 
                 diff = abs(index.x - thumb.x)
 
